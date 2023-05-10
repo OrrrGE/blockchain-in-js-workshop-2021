@@ -28,9 +28,9 @@ https://github.com/OrrrGE/blockchain-in-js-workshop-2021/commit/1fc409dab021caf8
 
 > 将截图上传至网盘，放入链接即可
 
-![https://www.aliyundrive.com/s/nMapy7sX3SQ](链接)
-
-
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab1.1.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab1.2.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab1.3.png)  
 ### 主观与讨论题内容
 
 
