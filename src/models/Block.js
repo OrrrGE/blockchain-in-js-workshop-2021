@@ -18,22 +18,26 @@ class Block {
 
   // isValid() 是用来检查区块是否合法的函数，需要完成以下内容：
   isValid() {
-// 计算哈希值前缀0的个数
-    let prefix = 0;
+// 统计哈希值前缀0的个数
+    let num = 0;
     for (let i = 0; i < this.hash.length; i++) {
       if (this.hash[i] === '0') {
-        prefix++;
+        num++;
       } else {
         break;
       }
     }
     // 比较前缀0的个数与难度值
-    return prefix >= DIFFICULTY;
+    return num >= DIFFICULTY;
   }
 
 // setNonce(nonce) 是用来设置区块的 nonce 的函数，需要完成以下内容：
   setNonce(nonce) {
-    this.nonce=nonce
+    this.hash=sha256(nonce+this.blockchain.name +
+        this.prevHash +
+        this.height +
+        JSON.stringify(this.data)
+    ).toString();
   }
   
 
