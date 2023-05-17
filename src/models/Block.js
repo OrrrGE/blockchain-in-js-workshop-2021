@@ -5,9 +5,6 @@ export const DIFFICULTY = 2
 
 class Block {
   // 1. 完成构造函数及其参数
-
-
-
   constructor(blockchain,previousHash, height, data) {
     this.previousHash=previousHash
     this.blockchain=blockchain
@@ -34,12 +31,13 @@ class Block {
 // setNonce(nonce) 是用来设置区块的 nonce 的函数，需要完成以下内容：
   setNonce(nonce) {
     this.hash=sha256(nonce+this.blockchain.name +
-        this.prevHash +
+        this.previousHash +
         this.height +
         JSON.stringify(this.data)
     ).toString();
   }
   
+
 
 }
 
