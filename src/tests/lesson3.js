@@ -28,16 +28,16 @@ const main = () => {
   )
 
   console.assert(
-    newBlock.coinbaseBeneficiary == miner,
+    newBlock.coinbaseBeneficiary === miner,
     'Error: Block niner public key error',
   )
 
   // 验证区块难度合法性
-  console.assert(newBlock.isValid() == false, 'Error: Very low probability')
+  console.assert(newBlock.isValid() === false, 'Error: Very low probability')
 
   newBlock = calcNonce(newBlock)
 
-  console.assert(newBlock.isValid() == true, 'Error: Very low probability')
+  console.assert(newBlock.isValid() === true, 'Error: Very low probability')
 
   blockchain._addBlock(newBlock)
 
@@ -55,13 +55,14 @@ const main = () => {
 
   let longestChain = blockchain.longestChain()
 
-  console.assert(longestChain.length == 2, 'Error: Block height should be 2')
+  console.assert(longestChain.length === 2, 'Error: Block height should be 2')
 
   let thirdBlock = new Block(
     blockchain,
     nextBlock.hash,
     3,
     sha256(new Date().getTime().toString()).toString(),
+    miner,
   )
 
   thirdBlock = calcNonce(thirdBlock)
@@ -71,16 +72,16 @@ const main = () => {
   longestChain = blockchain.longestChain()
 
   // 区块检查
-  console.assert(longestChain.length == 3, 'Block height should be 2')
+  console.assert(longestChain.length === 3, 'Block height should be 2')
   console.assert(
-    longestChain[2].hash == thirdBlock.hash,
+    longestChain[2].hash === thirdBlock.hash,
     `Height block hash should be ${thirdBlock.hash}`,
   )
 
   // UTXO check
 
   console.assert(
-    blockchain.containsBlock(thirdBlock) == true,
+    blockchain.containsBlock(thirdBlock) === true,
     'Error: blockchain should contain third block',
   )
 
@@ -93,7 +94,7 @@ const main = () => {
 
   console.assert(
     thirdBlock.utxoPool.utxos[miner] &&
-      thirdBlock.utxoPool.utxos[miner].amount == 37.5,
+      thirdBlock.utxoPool.utxos[miner].amount === 37.5,
     'Error: miner should got BTC',
   )
 }

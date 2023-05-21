@@ -1,3 +1,7 @@
 export default class UTXO {
-  constructor() {}
+  //pubKey 为公钥 amount 为金额
+  constructor(pubKey,amount) {
+    this.pubKey = pubKey
+    this.amount = amount
+  }
 }

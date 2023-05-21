@@ -1,16 +1,20 @@
 import sha256 from 'crypto-js/sha256.js'
+import UTXO from "./UTXO.js";
+import UTXOPool from "./UTXOPool.js";
 
 
 export const DIFFICULTY = 2
 
 class Block {
   // 1. 完成构造函数及其参数
-  constructor(blockchain,previousHash, height, data) {
+  constructor(blockchain,previousHash, height, data, miner) {
     this.previousHash=previousHash
     this.blockchain=blockchain
     this.height=height
     this.data=data
-    this.hash=sha256(this.previousHash+this.blockchain+this.height+JSON.stringify(this.data)).toString()
+    this.hash=sha256(this.previousHash+this.blockchain+this.height+JSON.stringify(this.data)+this.miner).toString()
+    this.utxoPool=new UTXOPool()
+    this.coinbaseBeneficiary=miner
   }
 
   // isValid() 是用来检查区块是否合法的函数，需要完成以下内容：
