@@ -81,7 +81,12 @@ https://github.com/OrrrGE/blockchain-in-js-workshop-2021/commit/4c28ef1ff42d5322
 
 > 将截图上传至网盘，放入链接即可
 
-![](链接)
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab3.1.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab3.2.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab3.3.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab3.4.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab3.5.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab3.6.png)  
 
 
 ### 主观与讨论题内容
