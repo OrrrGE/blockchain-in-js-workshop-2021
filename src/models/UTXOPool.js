@@ -1,4 +1,5 @@
 import UTXO from './UTXO.js'
+import Transaction from "./Transaction.js";
 
 class UTXOPool {
   constructor(utxos = {}) {
@@ -31,14 +32,40 @@ class UTXOPool {
 
 
   // 处理交易函数
-  handleTransaction() {}
+  handleTransaction(trx) {
+    if (this.isValidTransaction(trx.from, trx.amount)) {
+      //判断发送方是否在utxos中
+      if (!this.utxos.hasOwnProperty(trx.to)) {
+        this.utxos[trx.to] = new UTXO(trx.to, 0)
+      }
+      //判断接收方是否在utxos中
+      this.utxos[trx.from].amount -= trx.amount
+      for (let utxosKey in this.utxos) {
+        if (trx.to === utxosKey) {
+          this.utxos[trx.to].amount += trx.amount
+        }
+      }
+    }
+  }
 
   // 验证交易合法性
   /**
    * 验证余额
    * 返回 bool 
    */
-  isValidTransaction() {}
+  isValidTransaction(from,amount) {
+    //判断发送方是否在utxos中
+    if (!this.utxos[from]){
+        return false
+    }
+    //判断发送方余额是否大于等于交易余额
+    if (this.utxos[from].amount < amount){
+      return false
+    }else {
+      return true
+    }
+
+  }
 
 }
 
