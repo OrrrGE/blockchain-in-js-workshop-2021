@@ -1,5 +1,5 @@
 import sha256 from 'crypto-js/sha256.js';
-import UTXOPool from "./UTXOPool.js";
+
 
 class MerkleTree {
     constructor(data) {
@@ -12,8 +12,7 @@ class MerkleTree {
             return [];
         }
         let tree = [];
-        // 根据数据对叶节点排序
-        data.sort()
+
         // 对叶节点哈希
         for (let i = 0; i < data.length; i++) {
             tree.push(sha256(data[i]).toString());
