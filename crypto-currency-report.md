@@ -43,17 +43,22 @@ https://github.com/OrrrGE/blockchain-in-js-workshop-2021/commit/8039e2cc082fb900
 
 ### 代码 commint 地址
 
-https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d83a9fff2b4514c5503f470df939d0c2af
+https://github.com/OrrrGE/blockchain-in-js-workshop-2021/commit/c1257be92aed40aa10ea6bfe7bd8ad0f73015107
 
 
 ### 代码截图
 
-> 将截图上传至网盘，放入链接即可
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/clab2.1.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/clab2.2.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/clab2.3.png)  
 
-![](链接)
 
-
-### 主观与讨论题内容
+### 主观与讨论题内容  
+1.如果把例子里的字母扩展成字母和数字的形式，可以在每个节点上增加10个子节点，分别对应0-9的数字。  
+这样，每个节点最多有36个子节点，而不是26个。在插入和查找的时候，需要判断当前字符是字母还是数字，然后选择相应的子节点。   
+2.提高查询效率，可以考虑以下几个方面：  
+（1）使用哈希表来存储每个节点的子节点，而不是数组。这样可以避免空间浪费和查找时间。    
+（2）使用压缩字典树（trie）来减少树的高度和节点数。压缩字典树是指将没有分叉的路径合并成一个节点，例如单词"an"和"and"可以合并成一个节点"an(d)"。  
 
 ---
 
