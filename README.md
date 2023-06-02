@@ -128,21 +128,49 @@ https://github.com/OrrrGE/blockchain-in-js-workshop-2021/commit/107fd3d1a5c7c9df
 
 ### 代码 commint 地址
 
-https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d83a9fff2b4514c5503f470df939d0c2af
+https://github.com/OrrrGE/blockchain-in-js-workshop-2021/commit/2c08882302301b6341880df7584d5f14197b29f2
 
 
 ### 代码截图
 
-> 将截图上传至网盘，放入链接即可
-
-![](链接)
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab5.1.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab5.2.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab5.3.png)  
 
 
 ### 主观与讨论题内容
 
+比特币交易处理极限主要受几个因素的限制:  
+1. 区块大小限制:比特币当前的区块大小限制是1MB,这意味着每个区块可以容纳的交易数量是有限的,大约在2000-3000笔交易。如果交易量超过区块容量,会导致交易堵塞和确认时间增加。  
+2. 凑块时间:比特币的区块间隔时间是10分钟,这意味着每10分钟才可以有一个新的区块被挖出来,交易被确认和记录在区块链上。如果交易量激增,这会限制交易的处理速度。  
+3. 挖矿难度:挖矿难度决定了找到一个有效区块需要的计算量。如果难度过高,挖矿者需要更长时间才能找到一个区块,这会减慢交易处理速度。  
+  
+区块大小限制与挖矿难度之间存在比较复杂的关系:  
+  
+1. 区块大小增加可以直接增加交易处理能力,但是也会增加区块链数据量和对矿工的要求,可能导致矿工集中化。这可能会推高挖矿难度。  
+2. 挖矿难度上升会使得找区块变得更困难,减慢区块生成速度,降低交易处理速度。这可能会产生呼声来增加区块大小以应对交易需求。  
+3. 区块大小和挖矿难度都可能因比特币价格而波动。比特币价格上涨可能会带来更高的交易量和更多的挖矿能力,推高难度和区块大小。下跌则相反。  
+所以,比特币的交易处理能力需要在区块大小和挖矿难度之间达到平衡。两个参数的设置都需要谨慎考虑,以确保比特币网络的安全性和交易处理效率。  
 
+#### 加分项
 
----
+通过Debugger调试区块打包逻辑  
+1.设置断点  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab5.4.png)  
+2.验证交易是否合法  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab5.5.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab5.6.png)  
+3.对UTXOPool进行更新  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab5.7.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab5.8.png)  
+4.将交易存入区块中的默克尔树中  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab5.9.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab5.10.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab5.11.png)  
+5.更新区块头的哈希值  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab5.12.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab5.13.png)  
+
 
 
 
