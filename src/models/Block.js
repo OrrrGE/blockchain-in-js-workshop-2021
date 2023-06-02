@@ -81,7 +81,6 @@ class Block {
       //更新 UTXOPool
       this.utxoPool.handleTransaction(transaction);
     }
-    this.transactions.push(transaction);
     //更新 hash
     this._setHash();
   }
