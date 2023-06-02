@@ -2,10 +2,13 @@ import sha256 from 'crypto-js/sha256.js';
 import MerkleTree from "./MerkleTree.js";
 import UTXO from "./UTXO.js";
 import UTXOPool from "./UTXOPool.js";
+import Transaction from "./Transaction.js";
+import merkleTree from "./MerkleTree.js";
 
 export const DIFFICULTY = 2;
 
 class Block {
+  transactions = [];
   constructor(blockchain, previousHash, height, data, miner) {
     this.previousHash = previousHash;
     this.blockchain = blockchain;
@@ -49,7 +52,40 @@ class Block {
         this.height +
         this.merkleTree.getRoot()
     ).toString();
+
   }
+  // 根据交易变化更新区块 hash
+  _setHash() {
+    this.hash = this.calculateHash(this.coinbaseBeneficiary);
+  }
+
+  // 汇总计算交易的 Hash 值
+  /**
+   * 默克尔树实现
+   */
+  combinedTransactionsHash() {
+    this.merkleTree.buildTree(this.transactions);
+    return this.merkleTree.getRoot();
+  }
+
+  // 添加交易到区块
+  /**
+   *
+   * 需包含 UTXOPool 的更新与 hash 的更新
+   */
+  addTransaction(transaction) {
+    //验证交易合法性
+    if (this.utxoPool.isValidTransaction(transaction.from,transaction.amount)) {
+      //添加交易
+      this.transactions.push(transaction);
+      //更新 UTXOPool
+      this.utxoPool.handleTransaction(transaction);
+    }
+    this.transactions.push(transaction);
+    //更新 hash
+    this._setHash();
+  }
+
 
 }
 
