@@ -51,7 +51,7 @@ class UTXOPool {
   // 验证交易合法性
   /**
    * 验证余额
-   * 返回 bool 
+   * 返回 bool
    */
   isValidTransaction(from,amount) {
     //判断发送方是否在utxos中

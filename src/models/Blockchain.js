@@ -83,6 +83,7 @@ class Blockchain {
 
   */
   _addBlock(block) {
+
       if (!block.isValid()) return
       if (this.containsBlock(block)) return
       // 添加 UTXO 快照与更新的相关逻辑
@@ -95,7 +96,6 @@ class Blockchain {
       let utxo = new UTXO(block.coinbaseBeneficiary, 12.5)
       block.utxoPool.addUTXO(utxo)
     }
-
 }
 
 export default Blockchain

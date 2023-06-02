@@ -40,6 +40,7 @@ class Block {
     return num >= DIFFICULTY;
   }
 
+
   setNonce(nonce) {
     this.hash = sha256(
         nonce +
@@ -49,6 +50,7 @@ class Block {
         this.merkleTree.getRoot()
     ).toString();
   }
+
 }
 
 export default Block;
