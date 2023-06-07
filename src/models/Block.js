@@ -14,7 +14,7 @@ class Block {
     this.merkleTree = new MerkleTree(data);
     this.hash = this.calculateHash(miner);
     this.coinbaseBeneficiary = miner;
-    this.utxoPool = new UTXOPool(this.coinbaseBeneficiary);
+    this.utxoPool = new UTXOPool();
 
   }
 

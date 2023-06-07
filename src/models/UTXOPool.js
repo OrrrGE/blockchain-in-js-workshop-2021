@@ -2,8 +2,8 @@ import UTXO from './UTXO.js'
 import Transaction from "./Transaction.js";
 
 class UTXOPool {
-  constructor(miner) {
-    this.miner = miner
+  constructor() {
+    this.miner = ''
     this.utxos = {}
   }
 

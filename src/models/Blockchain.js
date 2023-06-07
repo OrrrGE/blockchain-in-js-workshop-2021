@@ -91,6 +91,8 @@ class Blockchain {
       if (block.previousHash!==this.genesis.hash) {
           block.utxoPool.utxos[block.coinbaseBeneficiary] = this.blocks[block.previousHash].utxoPool.clone()
       }
+      //设置utxoPool的miner
+      block.utxoPool.miner=block.coinbaseBeneficiary
       //更新UTXO结果
       let utxo = new UTXO(block.coinbaseBeneficiary, 12.5)
       block.utxoPool.addUTXO(utxo)

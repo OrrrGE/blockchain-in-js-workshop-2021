@@ -121,7 +121,7 @@ const main = () => {
 
   assert(
     latestUTXOPool.isValidTransaction(trx) === true,
-    '12Error: trx need to be validate',
+    'Error: trx need to be validate',
   )
 
   // lesson5 check block
@@ -150,7 +150,7 @@ const main = () => {
 
   assert(
     trxHash === thirdBlock.combinedTransactionsHash().toString(),
-    '12Error: new trx cannot have same hash',
+    'Error: new trx cannot have same hash',
   )
 
   assert(
