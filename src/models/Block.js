@@ -1,9 +1,7 @@
 import sha256 from 'crypto-js/sha256.js';
 import MerkleTree from "./MerkleTree.js";
-import UTXO from "./UTXO.js";
 import UTXOPool from "./UTXOPool.js";
-import Transaction from "./Transaction.js";
-import merkleTree from "./MerkleTree.js";
+
 
 export const DIFFICULTY = 2;
 
@@ -15,8 +13,9 @@ class Block {
     this.height = height;
     this.merkleTree = new MerkleTree(data);
     this.hash = this.calculateHash(miner);
-    this.utxoPool = new UTXOPool();
     this.coinbaseBeneficiary = miner;
+    this.utxoPool = new UTXOPool(this.coinbaseBeneficiary);
+
   }
 
   calculateHash(miner) {
@@ -75,7 +74,7 @@ class Block {
    */
   addTransaction(transaction) {
     //验证交易合法性
-    if (this.utxoPool.isValidTransaction(transaction.from,transaction.amount)) {
+    if (this.utxoPool.isValidTransaction(transaction)) {
       //添加交易
       this.transactions.push(transaction);
       //更新 UTXOPool

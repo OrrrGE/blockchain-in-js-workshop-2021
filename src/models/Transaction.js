@@ -2,10 +2,12 @@ import sha256 from 'crypto-js/sha256.js'
 
 class Transaction {
 
-  constructor(from, to, amount) {
+//添加手续费
+  constructor(from, to, amount,fee) {
     this.from = from
     this.to = to
     this.amount = amount
+    this.fee = fee
     this.hash = this._calculateHash()
   }
 
@@ -18,7 +20,7 @@ class Transaction {
 
   // 计算交易 hash 的摘要函数
   _calculateHash() {
-    return sha256(this.from + this.to + this.amount).toString()
+    return sha256(this.from + this.to + this.fee + this.amount).toString()
 
   }
 }

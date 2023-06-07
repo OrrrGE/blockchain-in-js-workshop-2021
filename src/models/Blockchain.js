@@ -1,4 +1,3 @@
-import UTXOPool from './UTXOPool.js'
 import UTXO from "./UTXO.js";
 
 

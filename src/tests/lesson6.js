@@ -32,16 +32,16 @@ const main = () => {
   )
 
   assert(
-    newBlock.coinbaseBeneficiary == miner,
+    newBlock.coinbaseBeneficiary === miner,
     'Error: Block niner public key error',
   )
 
   // 验证区块难度合法性
-  assert(newBlock.isValid() == false, 'Error: Very low probability')
+  assert(newBlock.isValid() === false, 'Error: Very low probability')
 
   newBlock = calcNonce(newBlock)
 
-  assert(newBlock.isValid() == true, 'Error: Very low probability')
+  assert(newBlock.isValid() === true, 'Error: Very low probability')
 
   blockchain._addBlock(newBlock)
 
@@ -59,13 +59,14 @@ const main = () => {
 
   let longestChain = blockchain.longestChain()
 
-  assert(longestChain.length == 2, 'Error: Block height should be 2')
+  assert(longestChain.length === 2, 'Error: Block height should be 2')
 
   let thirdBlock = new Block(
     blockchain,
     nextBlock.hash,
     3,
     sha256(new Date().getTime().toString()).toString(),
+      miner,
   )
 
   thirdBlock = calcNonce(thirdBlock)
@@ -75,16 +76,16 @@ const main = () => {
   longestChain = blockchain.longestChain()
 
   // 区块检查
-  assert(longestChain.length == 3, 'Block height should be 2')
+  assert(longestChain.length === 3, 'Block height should be 2')
   assert(
-    longestChain[2].hash == thirdBlock.hash,
+    longestChain[2].hash === thirdBlock.hash,
     `Height block hash should be ${thirdBlock.hash}`,
   )
 
   // UTXO check
 
   assert(
-    blockchain.containsBlock(thirdBlock) == true,
+    blockchain.containsBlock(thirdBlock) === true,
     'Error: blockchain should contain third block',
   )
 
@@ -97,7 +98,7 @@ const main = () => {
   )
 
   assert(
-    latestUTXOPool.utxos[miner] && latestUTXOPool.utxos[miner].amount == 37.5,
+    latestUTXOPool.utxos[miner] && latestUTXOPool.utxos[miner].amount === 37.5,
     'Error: miner should got BTC',
   )
 
@@ -111,16 +112,16 @@ const main = () => {
 
   assert(validateHash(trx.hash), 'Error: Transaction hash invalid...')
 
-  assert(trx._calculateHash() == trx.hash, 'Error: Trx hash invalid')
+  assert(trx._calculateHash() === trx.hash, 'Error: Trx hash invalid')
 
   assert(
-    trx._calculateHash() != compareTrx._calculateHash(),
+    trx._calculateHash() !== compareTrx._calculateHash(),
     'Error: Trx hash need calc with Fee',
   )
 
   assert(
-    latestUTXOPool.isValidTransaction(trx) == true,
-    'Error: trx need to be validate',
+    latestUTXOPool.isValidTransaction(trx) === true,
+    '12Error: trx need to be validate',
   )
 
   // lesson5 check block
@@ -128,13 +129,13 @@ const main = () => {
   thirdBlock.addTransaction(trx)
 
   assert(
-    latestUTXOPool.utxos[miner] && latestUTXOPool.utxos[miner].amount == 36.5,
+    latestUTXOPool.utxos[miner] && latestUTXOPool.utxos[miner].amount === 36.5,
     'Error: miner should got right balance',
   )
 
   assert(
     latestUTXOPool.utxos[receiverPubKey] &&
-      latestUTXOPool.utxos[receiverPubKey].amount == 1,
+      latestUTXOPool.utxos[receiverPubKey].amount === 1,
     'Error: receiver should got right balance',
   )
 
@@ -148,18 +149,18 @@ const main = () => {
   thirdBlock.addTransaction(badTrx)
 
   assert(
-    trxHash != thirdBlock.combinedTransactionsHash().toString(),
-    'Error: new trx cannot have same hash',
+    trxHash === thirdBlock.combinedTransactionsHash().toString(),
+    '12Error: new trx cannot have same hash',
   )
 
   assert(
-    latestUTXOPool.utxos[miner] && latestUTXOPool.utxos[miner].amount == 36.5,
+    latestUTXOPool.utxos[miner] && latestUTXOPool.utxos[miner].amount === 36.5,
     'Error: miner should got right balance',
   )
 
   assert(
     latestUTXOPool.utxos[receiverPubKey] &&
-      latestUTXOPool.utxos[receiverPubKey].amount == 1,
+      latestUTXOPool.utxos[receiverPubKey].amount === 1,
     'Error: receiver should got right balance',
   )
 
@@ -170,12 +171,12 @@ const main = () => {
 
   assert(
     latestUTXOPool.utxos[receiverPubKey] &&
-      latestUTXOPool.utxos[receiverPubKey].amount == 0.89,
+      latestUTXOPool.utxos[receiverPubKey].amount === 0.89,
     'Error: receiver should got right balance',
   )
 
   assert(
-    latestUTXOPool.utxos[miner] && latestUTXOPool.utxos[miner].amount == 36.61,
+    latestUTXOPool.utxos[miner] && latestUTXOPool.utxos[miner].amount === 36.61,
     'Error: miner should got right balance',
   )
 }
