@@ -180,18 +180,27 @@ https://github.com/OrrrGE/blockchain-in-js-workshop-2021/commit/2c08882302301b63
 
 ### 代码 commint 地址
 
-https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d83a9fff2b4514c5503f470df939d0c2af
+#第一次大部分代码的修改： https://github.com/OrrrGE/blockchain-in-js-workshop-2021/commit/e01a1a44ed0d969684087c2bdc13f4e102f4de47  
+#第二次小改动： https://github.com/OrrrGE/blockchain-in-js-workshop-2021/commit/a7df7346716fbb7de128906bbb7bfce45f016258  
 
 
 ### 代码截图
 
-> 将截图上传至网盘，放入链接即可
-
-![](图片链接放这里)
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab6.6.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab6.1.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab6.2.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab6.3.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab6.4.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab6.5.png)  
 
 
 ### 主观与讨论题内容
-
+1.要求需要快速确认的交易交易费用更高，反之对交易确认没有那么急的交易交易费用更低，网络拥堵时的交易费用比网络通畅时的交易费用高，交易的字节数越多，交易费越高  
+2.矿工激励减弱：交易费用是矿工获得收入的一种方式，特别是在比特币发行量减半的情况下。如果取消交易费用，矿工的收入将只依赖区块奖励，这可能导致矿工激励减弱，从而影响比特币网络的安全性。  
+交易拥堵：交易费用是一种市场机制，帮助平衡交易需求和区块链的有限空间。如果取消交易费用，用户可以免费发送大量交易，导致交易拥堵，处理速度变慢。  
+垃圾交易增多：没有交易费用，恶意用户可能会刷交易，发送大量无意义的交易，浪费网络资源。  
+挑选优先级的困难：矿工通常会优先选择交易费较高的交易，以获得更高的收益。没有交易费用，矿工在处理交易时可能难以确定优先级。  
+网络安全风险增加：由于矿工激励减弱和网络资源浪费，比特币网络可能变得更容易受到攻击，例如双花攻击、51%攻击等。
 
 
 ---
