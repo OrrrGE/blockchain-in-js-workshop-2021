@@ -68,18 +68,28 @@ https://github.com/OrrrGE/blockchain-in-js-workshop-2021/commit/c1257be92aed40aa
 
 ### 代码 commint 地址
 
-https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d83a9fff2b4514c5503f470df939d0c2af
+https://github.com/OrrrGE/blockchain-in-js-workshop-2021/commit/fa54511e22b70a9e6ca438311435e807194fc1ce#diff-533b4b584c112260c48e9c6a04487f8649b82ef9e0e777a5745f24afcb7e6aa5
 
 
 ### 代码截图
 
-> 将截图上传至网盘，放入链接即可
-
-![](链接)
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/clab3.1.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/clab3.2.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/clab3.3.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/clab3.4.png)  
 
 
 ### 主观与讨论题内容
 
+1. 基于字典树，以太坊做了以下改良：  
+     使用 RLP（Recursive Length Prefix）编码，简化节点存储。  
+     将节点的哈希值作为键，这样可以减少存储空间并提高查找效率。  
+     为了提高安全性，以太坊使用了 keccak256 作为哈希函数。  
+
+2. MPT 想要解决的核心问题是：  
+    提供一个加密安全且可验证的数据结构。  
+    优化存储和传输效率。  
+    便于在去中心化网络中传递状态信息。  
 
 
 ---
