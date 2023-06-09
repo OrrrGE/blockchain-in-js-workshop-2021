@@ -69,7 +69,7 @@ class Block {
 
   // 添加交易到区块
   /**
-   * 
+   *
    * 需包含 UTXOPool 的更新与 hash 的更新
    */
   addTransaction(transaction) {
@@ -83,6 +83,13 @@ class Block {
     //更新 hash
     this._setHash();
   }
+
+
+  // 添加签名校验逻辑
+  isValidTransaction(transaction) {
+
+  }
+}
 
 
 }
