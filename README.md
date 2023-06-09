@@ -203,7 +203,46 @@ https://github.com/OrrrGE/blockchain-in-js-workshop-2021/commit/2c08882302301b63
 网络安全风险增加：由于矿工激励减弱和网络资源浪费，比特币网络可能变得更容易受到攻击，例如双花攻击、51%攻击等。
 
 
----
+
+
+
+## 第七课代码
+
+
+### 代码 commint 地址
+
+https://github.com/OrrrGE/blockchain-in-js-workshop-2021/commit/5748dbe907cf1c4fb89b9e6b485c69e086e2e3bc
+
+
+### 代码截图
+
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab7.1.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab7.2.png)  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab7.3.png)  
+
+
+### 主观与讨论题内容
+#将 crypto.js debug 执⾏的签名与验证签名添加代码注释  
+1.对签名函数打断点  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab7.4.png)  
+  
+2.从私钥创建一个ECDSA的密钥对对象，该对象包含公钥和私钥的信息，以及一些方法，如签名和验证  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab7.5.png)  
+  
+3.对交易哈希签名并返回十六进制的签名，如果如果私钥无效或发生错误，返回"invalid signature"  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab7.6.png)  
+  
+4.验证签名函数  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab7.7.png)  
+  
+5.从公钥（十六进制字符串）创建一个ECDSA的密钥对对象，该对象包含公钥的信息，以及一些方法  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab7.8.png)  
+  
+6.验证消息和签名是否匹配，以及是否由keypair中的公钥对应的私钥签发，返回一个布尔值  
+![image](https://github.com/OrrrGE/blockchain-in-js-workshop-2021/blob/lesson1/pic/lab7.9.png)  
+
+
+
 
 
 ## 结课报告
