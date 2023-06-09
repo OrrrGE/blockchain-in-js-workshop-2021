@@ -1,13 +1,15 @@
 import sha256 from 'crypto-js/sha256.js'
+import {verifySignature} from "../crypto.js";
 
 class Transaction {
 
 //添加手续费
-  constructor(from, to, amount,fee) {
+  constructor(from, to, amount,fee,signature) {
     this.from = from
     this.to = to
     this.amount = amount
     this.fee = fee
+    this.signature = signature
     this.hash = this._calculateHash()
   }
 
@@ -27,8 +29,16 @@ class Transaction {
 
   // 校验交易签名 返回 bool 类型的值
   hasValidSignature() {
-
+    // 交易没有签名的情况
+    if (!this.signature) {
+      return false
+    }
+    // 交易有签名的情况
+    return verifySignature(this.hash, this.signature, this.from)
   }
+
+
+
 
 }
 

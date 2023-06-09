@@ -1,6 +1,7 @@
 import sha256 from 'crypto-js/sha256.js';
 import MerkleTree from "./MerkleTree.js";
 import UTXOPool from "./UTXOPool.js";
+import {verifySignature} from "../crypto.js";
 
 
 export const DIFFICULTY = 2;
@@ -74,7 +75,7 @@ class Block {
    */
   addTransaction(transaction) {
     //验证交易合法性
-    if (this.utxoPool.isValidTransaction(transaction)) {
+    if (this.utxoPool.isValidTransaction(transaction) && this.isValidTransaction(transaction)) {
       //添加交易
       this.transactions.push(transaction);
       //更新 UTXOPool
@@ -87,9 +88,10 @@ class Block {
 
   // 添加签名校验逻辑
   isValidTransaction(transaction) {
-
+    let trxHash = transaction._calculateHash();
+    return verifySignature(trxHash, transaction.signature, transaction.from);
   }
-}
+
 
 
 }
